@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>代码编辑器 · 使用说明</title>
+<style>
+  body { font-family: "PingFang SC", "Helvetica Neue", sans-serif; max-width: 720px; margin: 40px auto; padding: 0 24px; color: #1d1d1f; line-height: 1.7; }
+  h1 { border-bottom: 2px solid #2b7bd6; padding-bottom: 8px; }
+  h2 { color: #2b7bd6; margin-top: 32px; }
+  code { background: #f2f2f7; padding: 1px 6px; border-radius: 4px; }
+  table { border-collapse: collapse; width: 100%; margin: 12px 0; }
+  th, td { border: 1px solid #d8d8de; padding: 6px 10px; text-align: left; }
+  th { background: #f2f2f7; }
+</style>
+</head>
+<body>
+<h1>代码编辑器 · 使用说明</h1>
+<p>原生 AppKit 实现的轻量代码编辑器（Swift），由记事本升级而来：保留全部纯文本编辑与编码能力，新增语法高亮、行号栏与代码编辑辅助。启动快、打字跟手，10 MB 文件打开约 0.15 s。</p>
+
+<h2>代码编辑功能</h2>
+<ul>
+  <li><b>语法高亮</b>：Swift / Objective-C / C / C++ / C# / Java / Kotlin / Python / JavaScript / TypeScript / Go / Rust / Ruby / PHP / Shell / PowerShell / SQL / Lua / HTML / XML / CSS / SCSS / JSON / YAML / TOML / Markdown / Dockerfile / Makefile 等 29 种语言，按扩展名自动识别，也可在状态栏或「代码 → 语言」手动切换</li>
+  <li><b>行号栏</b>：显示行号，当前行加亮；「代码 / 查看」菜单可开关</li>
+  <li><b>当前行高亮 / 缩进参考线 / 括号匹配</b>：光标所在行整行加亮，按缩进层级绘制参考线，光标旁的括号自动高亮另一半</li>
+  <li><b>智能缩进</b>：回车自动继承当前行缩进；在括号内回车自动多缩进一层并补全闭合括号；Tab / ⇧Tab 可对多行选区整体缩进</li>
+  <li><b>自动配对</b>：输入 <code>(</code> <code>[</code> <code>{</code> <code>"</code> <code>'</code> 自动补全右半；选中文字后输入左括号直接包裹；输入右半自动跳过；退格成对删除</li>
+  <li><b>主题</b>：跟随系统 / Xcode 浅色 / Xcode 深色 / Monokai / Solarized 浅色 / GitHub 深色，全部偏好自动记忆</li>
+</ul>
+
+<h2>快捷键</h2>
+<table>
+  <tr><th>按键</th><th>功能</th></tr>
+  <tr><td><code>⌘/</code></td><td>注释 / 取消注释（按语言使用对应注释符）</td></tr>
+  <tr><td><code>⇧⌘D</code></td><td>复制当前行</td></tr>
+  <tr><td><code>⇧⌘K</code></td><td>删除当前行</td></tr>
+  <tr><td><code>⌥↑ / ⌥↓</code></td><td>上移 / 下移当前行（支持整段选区）</td></tr>
+  <tr><td><code>⌘] / ⌘[</code></td><td>增加 / 减少缩进</td></tr>
+  <tr><td><code>Tab / ⇧Tab</code></td><td>缩进 / 反缩进（选区跨行时作用于整段）</td></tr>
+  <tr><td>新建 / 新窗口 / 打开</td><td>⌘N / ⇧⌘N / ⌘O</td></tr>
+  <tr><td>保存 / 另存为 / 打印</td><td>⌘S / ⇧⌘S / ⌘P</td></tr>
+  <tr><td>查找 / 下一个 / 上一个 / 替换 / 转到行</td><td>⌘F / ⌘G / ⇧⌘G / ⌥⌘F / ⌘L</td></tr>
+  <tr><td>插入时间日期</td><td>F5</td></tr>
+  <tr><td>放大 / 缩小 / 恢复默认</td><td>⌘= / ⌘- / ⌘0（或 ⌘+滚轮）</td></tr>
+  <tr><td>全屏 / 关闭窗口</td><td>⌃⌘F / ⌘W</td></tr>
+</table>
+
+<h2>文本基础能力（继承自记事本）</h2>
+<ul>
+  <li><b>文件</b>：新建 / 新窗口 / 打开 / 保存 / 另存为（可选编码与行尾）/ 页面设置 / 打印</li>
+  <li><b>编辑</b>：撤消 / 重做 / 剪切 / 复制 / 粘贴 / 删除 / 查找 / 替换 / 转到行 / 全选 / 插入时间日期</li>
+  <li><b>编码</b>：UTF-8、UTF-8 带 BOM、UTF-16 LE / BE（含无 BOM 自动识别）、ANSI（GB18030）</li>
+  <li><b>行尾</b>：Windows (CRLF)、Unix (LF)、Macintosh (CR)，自动识别、保存时按所选行尾写出</li>
+  <li><b>状态栏</b>：行列位置、语言、缩进、行尾、编码、缩放，均可点击切换</li>
+  <li><b>其他</b>：未保存三键提示、拖拽文件到窗口打开、多窗口级联、自动换行、字体对话框</li>
+</ul>
+
+<h2>设为默认编辑器</h2>
+<p>菜单「代码编辑器 → 设为默认文本编辑器…」可一键接管 txt / log / ini / csv / md / json 等文本格式的默认打开方式。源码格式（.swift / .py / .js 等）仅注册为「可打开」，不会抢占 Xcode、VS Code 等 IDE 的默认地位。</p>
+
+<h2>性能说明</h2>
+<ul>
+  <li>数据层为 UTF-8 字节级单遍实现，行号采用二分索引并在编辑时增量维护（定位 O(log n)）</li>
+  <li>语法着色基于自研单遍扫描器，打字时只重绘改动的 token 区间，开销与改动量成正比</li>
+  <li>超过 2 MB 的文件自动切换为纯文本模式以保证流畅（行号与编辑功能不受影响）</li>
+</ul>
+</body>
+</html>

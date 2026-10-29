@@ -1,0 +1,27 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Xcode / SwiftPM
+xcuserdata/
+*.xcworkspace
+*.xcuserstate
+DerivedData/
+.build/
+.swiftpm/
+*.xcodeproj/project.xcassets
+!*.xcodeproj/project.pbxproj
+
+# 构建产物（源码发布，二进制走 Release 附件）
+build/
+dist/
+*.app/
+*.dmg
+*.zip
+*.icns
+
+# 临时/日志
+*.log
+/tmp/
